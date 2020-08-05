@@ -3,9 +3,9 @@ import "./App.css";
 import InputTextArea from "./component/InputTextArea";
 
 const App = () => {
-  const [item, setItem] = useState([]);
+  const [item, setItems] = useState([]);
 
-  const addItems = (inputText) => {
+  const AddItems = (inputText) => {
     setItems((prevItems) => {
       return [...prevItems, inputText];
     });
@@ -16,7 +16,8 @@ const App = () => {
       <div className="heading">
         <h1>To Do List</h1>
       </div>
-      <InputTextArea />
+      <InputTextArea onAdd={AddItems} />
+      {item.map((item) => console.log(item))}
     </div>
   );
 };
