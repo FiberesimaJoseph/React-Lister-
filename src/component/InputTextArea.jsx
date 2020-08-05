@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-const InputTextArea = () => {
+const InputTextArea = (props) => {
+  const [inputText, setInputText] = useState("");
   return (
     <div className="form">
       <input type="text"></input>
-      <button>
+      <button
+        onClick={() => {
+          props.onAdd();
+        }}
+      >
         <span>Add</span>
       </button>
     </div>
