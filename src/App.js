@@ -12,6 +12,13 @@ const App = () => {
     });
   };
 
+  const deleteItem = (id) => {
+    setItems((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index != id;
+      });
+    });
+  };
   return (
     <div className="container">
       <div className="heading">
